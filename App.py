@@ -5,7 +5,7 @@ import concurrent.futures
 import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
 @st.cache_data(show_spinner=False)
@@ -16,7 +16,7 @@ def fetch_poster(movie_id):
             adapter=HTTPAdapter(max_retries=retry)
             session.mount('http://',adapter)
             session.mount('https://',adapter)
-            load_dotenv()
+            #load_dotenv()
             API_KEY = os.getenv("TMDB_API_KEY")
 
             try:
